@@ -3,9 +3,25 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyles{
   static TextStyle headerTextStyle(){
-    return GoogleFonts.rubik(
+    return GoogleFonts.signikaNegative(
       fontSize: 18,
+      fontWeight: FontWeight.w600,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle heroTextStyle(){
+    return GoogleFonts.oswald(
+      fontSize: 24,
       fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+  }
+
+  static TextStyle headingTextStyle(){
+    return GoogleFonts.rubikMonoOne(
+      fontSize: 30,
+      fontWeight: FontWeight.w800,
       color: Colors.white,
     );
   }
