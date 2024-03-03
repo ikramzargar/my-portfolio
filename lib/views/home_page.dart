@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
+import 'package:my_portfolio/globals/app_text_styles.dart';
 class homePage extends StatefulWidget {
   const homePage({super.key});
 
@@ -12,22 +13,23 @@ class _homePageState extends State<homePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: appColor.bgColor ,
+        elevation: 0,
+        backgroundColor: AppColor.bgColor ,
         title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 60),
-          child: const Row(
+          padding:  EdgeInsets.symmetric(horizontal: 60),
+          child: Row(
             children: [
-              Text('Portfolio'),
+              Text('Portfolio',style: AppTextStyles.headerTextStyle(),),
               Spacer(),
-              Text('Home'),
+              Text('Home',style: AppTextStyles.headerTextStyle(),),
               SizedBox(width: 20,),
-              Text('About'),
+              Text('About',style: AppTextStyles.headerTextStyle(),),
               SizedBox(width: 20,),
-              Text('Skills'),
+              Text('Skills',style: AppTextStyles.headerTextStyle(),),
               SizedBox(width: 20,),
-              Text('Projects'),
+              Text('Projects',style: AppTextStyles.headerTextStyle(),),
               SizedBox(width: 20,),
-              Text('Contact'),
+              Text('Contact',style: AppTextStyles.headerTextStyle(),),
             ],
           ),
         ),

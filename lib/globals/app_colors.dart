@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-class appColor{
+class AppColor{
   static Color bgColor = Color(0xff002147);
 }
