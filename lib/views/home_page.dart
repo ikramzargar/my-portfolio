@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_portfolio/globals/app_colors.dart';
 class homePage extends StatefulWidget {
   const homePage({super.key});
 
@@ -12,6 +12,7 @@ class _homePageState extends State<homePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: appColor.bgColor ,
         title: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 60),
           child: const Row(
