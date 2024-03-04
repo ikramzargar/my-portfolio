@@ -32,7 +32,7 @@ class AppTextStyles{
       fontWeight: FontWeight.w600,
       fontSize: 17,
       color: Colors.white,
-      letterSpacing: 1,
+      letterSpacing: 1.5,
     );
   }
 }

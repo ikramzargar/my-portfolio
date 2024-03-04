@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
+import 'package:my_portfolio/globals/app_buttons.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
 import 'package:my_portfolio/views/about_me.dart';
@@ -178,8 +179,10 @@ class _HomePageState extends State<HomePage> {
                       height: 18,
                     ),
                     FadeInUp(
-                        duration: const Duration(milliseconds: 1800),
-                        child: buildMaterialButton(onTap: () {}))
+                      duration: const Duration(milliseconds: 1800),
+                      child: AppButtons.buildMaterialButton(
+                          onTap: () {}, buttonText: 'Download Cv'),
+                    ),
                   ],
                 ),
                 ProfileAnimation(),
@@ -195,24 +198,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  MaterialButton buildMaterialButton({required VoidCallback onTap}) {
-    return MaterialButton(
-      onPressed: onTap,
-      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      color: AppColor.themeColor,
-      shape: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30),
-        borderSide: BorderSide.none,
-      ),
-      height: 46,
-      minWidth: 120,
-      hoverColor: AppColor.aqua,
-      elevation: 6,
-      splashColor: AppColor.lawGreen,
-      focusElevation: 12,
-      child: Text('Download CV', style: AppTextStyles.headerTextStyle()),
-    );
-  }
   // Ink buildSocialButtons({required String asset, required bool hover}) {
   //   return Ink(
   //     width: 45,
