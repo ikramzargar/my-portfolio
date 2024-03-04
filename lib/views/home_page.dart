@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
@@ -75,16 +76,66 @@ class _HomePageState extends State<HomePage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Hello It\`s Me',
+                  'Hello It`s Me',
                   style: AppTextStyles.heroTextStyle(),
+                ),
+                const SizedBox(
+                  height: 15,
                 ),
                 Text(
                   'Ikram Zargar',
                   style: AppTextStyles.headingTextStyle(),
                 ),
-                Text(
-                  'And I\`m a Flutter Developer',
-                  style: AppTextStyles.heroTextStyle(),
+                const SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'And I`m a ',
+                      style: AppTextStyles.heroTextStyle(),
+                    ),
+                    AnimatedTextKit(
+                      animatedTexts: [
+                        TyperAnimatedText(
+                          'Flutter Developer',
+                          textStyle: AppTextStyles.heroTextStyle().copyWith(
+                            color: Colors.green,
+                          ),
+                        ),
+                      ],
+                      pause: const Duration(milliseconds: 1000),
+                      displayFullTextOnTap: true,
+                      stopPauseOnTap: true,
+                      repeatForever: true,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                 SizedBox(
+                  width: size.width * 0.5,
+                  child: Text(
+                    'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
+                     'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
+                      'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
+                      'nisi ut aliquid ex ea commodi consequatur.',
+                    style: AppTextStyles.normalStyle(),
+                  ),
+                ),
+                const SizedBox(height: 22,),
+                Row(
+                  children: [
+                    CircleAvatar(
+                    maxRadius: 22,
+                    backgroundColor: AppColor.themeColor,
+                      child: CircleAvatar(
+                        maxRadius: 20,
+                        backgroundColor: AppColor.bgColor,
+                      ),
+                    ),
+                  ],
                 )
               ],
             )
