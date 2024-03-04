@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
+import 'package:my_portfolio/widgets/profile_animations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -69,109 +70,122 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
-            top: size.height * 0.3,
-            right: size.width * 0.2,
-            left: size.width * 0.2),
-        child: Row(
+          top: size.height * 0.05,
+          right: size.width * 0.1,
+          left: size.width * 0.1,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                FadeInDown(
-                  duration: const Duration(milliseconds: 1200),
-                  child: Text(
-                    'Hello It`s Me',
-                    style: AppTextStyles.heroTextStyle(),
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                FadeInRight(
-                  duration: const Duration(milliseconds: 1400),
-                  child: Text(
-                    'Ikram Zargar',
-                    style: AppTextStyles.headingTextStyle(),
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                FadeInLeft(
-                  duration: const Duration(milliseconds: 1400),
-                  child: Row(
-                    children: [
-                      Text(
-                        'And I`m a ',
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    FadeInDown(
+                      duration: const Duration(milliseconds: 1200),
+                      child: Text(
+                        'Hello It`s Me',
                         style: AppTextStyles.heroTextStyle(),
                       ),
-                      AnimatedTextKit(
-                        animatedTexts: [
-                          TyperAnimatedText(
-                            'Flutter Developer',
-                            textStyle: AppTextStyles.heroTextStyle().copyWith(
-                              color: Colors.green,
-                            ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    FadeInRight(
+                      duration: const Duration(milliseconds: 1400),
+                      child: Text(
+                        'Ikram Zargar',
+                        style: AppTextStyles.headingTextStyle(),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    FadeInLeft(
+                      duration: const Duration(milliseconds: 1400),
+                      child: Row(
+                        children: [
+                          Text(
+                            'And I`m a ',
+                            style: AppTextStyles.heroTextStyle(),
+                          ),
+                          AnimatedTextKit(
+                            animatedTexts: [
+                              TyperAnimatedText(
+                                'Flutter Developer',
+                                textStyle:
+                                    AppTextStyles.heroTextStyle().copyWith(
+                                  color: Colors.green,
+                                ),
+                              ),
+                            ],
+                            pause: const Duration(milliseconds: 1000),
+                            displayFullTextOnTap: true,
+                            stopPauseOnTap: true,
+                            repeatForever: true,
                           ),
                         ],
-                        pause: const Duration(milliseconds: 1000),
-                        displayFullTextOnTap: true,
-                        stopPauseOnTap: true,
-                        repeatForever: true,
                       ),
-                    ],
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                FadeInDown(
-                  duration: const Duration(milliseconds: 1600),
-                  child: SizedBox(
-                    width: size.width * 0.5,
-                    child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
-                      'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
-                      'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
-                      'nisi ut aliquid ex ea commodi consequatur.',
-                      style: AppTextStyles.normalStyle(),
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 22,
-                ),
-                FadeInUp(
-                  duration: const Duration(milliseconds: 1600),
-                  child: Row(
-                    children: [
-                      buildSocialButtons(asset: AppAssets.facebook),
-                      const SizedBox(
-                        width: 12,
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    FadeInDown(
+                      duration: const Duration(milliseconds: 1600),
+                      child: SizedBox(
+                        width: size.width * 0.5,
+                        child: Text(
+                          'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
+                          'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
+                          'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
+                          'nisi ut aliquid ex ea commodi consequatur.',
+                          style: AppTextStyles.normalStyle(),
+                        ),
                       ),
-                      buildSocialButtons(asset: AppAssets.twitter),
-                      const SizedBox(
-                        width: 12,
+                    ),
+                    const SizedBox(
+                      height: 22,
+                    ),
+                    FadeInUp(
+                      duration: const Duration(milliseconds: 1600),
+                      child: Row(
+                        children: [
+                          buildSocialButtons(asset: AppAssets.facebook),
+                          const SizedBox(
+                            width: 12,
+                          ),
+                          buildSocialButtons(asset: AppAssets.twitter),
+                          const SizedBox(
+                            width: 12,
+                          ),
+                          buildSocialButtons(asset: AppAssets.linkedin),
+                          const SizedBox(
+                            width: 12,
+                          ),
+                          buildSocialButtons(asset: AppAssets.insta),
+                          const SizedBox(
+                            width: 12,
+                          ),
+                          buildSocialButtons(asset: AppAssets.github),
+                        ],
                       ),
-                      buildSocialButtons(asset: AppAssets.linkedin),
-                      const SizedBox(
-                        width: 12,
-                      ),
-                      buildSocialButtons(asset: AppAssets.insta),
-                      const SizedBox(
-                        width: 12,
-                      ),
-                      buildSocialButtons(asset: AppAssets.github),
-                    ],
-                  ),
+                    ),
+                    const SizedBox(
+                      height: 18,
+                    ),
+                    FadeInUp(
+                        duration: const Duration(milliseconds: 1800),
+                        child: buildMaterialButton(onTap: () {}))
+                  ],
                 ),
-                const SizedBox(
-                  height: 18,
-                ),
-                FadeInUp(
-                    duration: const Duration(milliseconds: 1800),
-                    child: buildMaterialButton(onTap: () {}))
+                ProfileAnimation(),
               ],
+            ),
+            const SizedBox(
+              height: 400,
             )
           ],
         ),
