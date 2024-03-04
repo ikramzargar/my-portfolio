@@ -1,5 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/globals/app_assets.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
 
@@ -114,32 +115,61 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   height: 15,
                 ),
-                 SizedBox(
+                SizedBox(
                   width: size.width * 0.5,
                   child: Text(
                     'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
-                     'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
-                      'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
-                      'nisi ut aliquid ex ea commodi consequatur.',
+                    'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
+                    'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
+                    'nisi ut aliquid ex ea commodi consequatur.',
                     style: AppTextStyles.normalStyle(),
                   ),
                 ),
-                const SizedBox(height: 22,),
+                const SizedBox(
+                  height: 22,
+                ),
                 Row(
                   children: [
-                    CircleAvatar(
-                    maxRadius: 22,
-                    backgroundColor: AppColor.themeColor,
-                      child: CircleAvatar(
-                        maxRadius: 20,
-                        backgroundColor: AppColor.bgColor,
-                      ),
+                    buildSocialButtons(asset: AppAssets.facebook),
+                    const SizedBox(
+                      width: 12,
                     ),
+                    buildSocialButtons(asset: AppAssets.twitter),
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    buildSocialButtons(asset: AppAssets.linkedin),
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    buildSocialButtons(asset: AppAssets.insta),
+                    const SizedBox(
+                      width: 12,
+                    ),
+                    buildSocialButtons(asset: AppAssets.github),
                   ],
                 )
               ],
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  CircleAvatar buildSocialButtons({required String asset}) {
+    return CircleAvatar(
+      maxRadius: 20,
+      backgroundColor: AppColor.themeColor,
+      child: CircleAvatar(
+        maxRadius: 18,
+        backgroundColor: AppColor.bgColor,
+        child: Image.asset(
+          asset,
+          width: 20,
+          height: 24,
+          color: AppColor.themeColor,
+          fit: BoxFit.contain,
         ),
       ),
     );
