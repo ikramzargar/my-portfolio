@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
+import 'package:my_portfolio/views/about_me.dart';
 import 'package:my_portfolio/widgets/profile_animations.dart';
 
 class HomePage extends StatefulWidget {
@@ -71,8 +72,8 @@ class _HomePageState extends State<HomePage> {
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
           top: size.height * 0.05,
-          right: size.width * 0.1,
-          left: size.width * 0.1,
+          // right: size.width * 0.1,
+          // left: size.width * 0.1,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -185,8 +186,9 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(
-              height: 400,
-            )
+              height: 220,
+            ),
+            AboutMe(),
           ],
         ),
       ),
