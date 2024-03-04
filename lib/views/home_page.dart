@@ -12,6 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColor.bgColor,
       appBar: AppBar(
@@ -63,18 +64,32 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Column(
-                children: [
-                  Text('Hello It\`s Me',style: AppTextStyles.heroTextStyle(),)
-                ],
-              )
-            ],
-          )
-        ],
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(
+            top: size.height * 0.3,
+            right: size.width * 0.2,
+            left: size.width * 0.2),
+        child: Row(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Hello It\`s Me',
+                  style: AppTextStyles.heroTextStyle(),
+                ),
+                Text(
+                  'Ikram Zargar',
+                  style: AppTextStyles.headingTextStyle(),
+                ),
+                Text(
+                  'And I\`m a Flutter Developer',
+                  style: AppTextStyles.heroTextStyle(),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

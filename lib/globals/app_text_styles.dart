@@ -13,16 +13,17 @@ class AppTextStyles{
   static TextStyle heroTextStyle(){
     return GoogleFonts.oswald(
       fontSize: 24,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w800,
       color: Colors.white,
     );
   }
 
   static TextStyle headingTextStyle(){
-    return GoogleFonts.rubikMonoOne(
-      fontSize: 30,
-      fontWeight: FontWeight.w800,
+    return GoogleFonts.rubikMoonrocks(
+      fontSize: 36,
+      fontWeight: FontWeight.bold,
       color: Colors.white,
+      letterSpacing: 2,
     );
   }
 }
