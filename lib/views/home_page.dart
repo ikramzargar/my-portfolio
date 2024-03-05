@@ -5,6 +5,7 @@ import 'package:my_portfolio/globals/app_assets.dart';
 import 'package:my_portfolio/globals/app_buttons.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
+import 'package:my_portfolio/helper%20class/helper.dart';
 import 'package:my_portfolio/views/about_me.dart';
 import 'package:my_portfolio/views/contact.dart';
 import 'package:my_portfolio/views/footer.dart';
@@ -33,162 +34,152 @@ class _HomePageState extends State<HomePage> {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColor.bgColor,
-      body: Container(
-          height: size.height,
-          width: size.width,
-          alignment: Alignment.center,
-          padding: EdgeInsetsDirectional.symmetric(
-            vertical: 30,
-            horizontal: size.width * 0.1,
-          ),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-
-              if (constraints.maxWidth <768){
-                return SingleChildScrollView(
-                  child: Column(
-                    children: [
-                      buildHomePersonalInfo(size),
-                      SizedBox(height: 25,),
-                      const ProfileAnimation(),
-                    ],
-                  ),
-                );
-              }
-              else{
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    buildHomePersonalInfo(size),
-                    const ProfileAnimation(),
-                  ],
-                );
-              }
-
-            }
-          )),
+      body: Helper(
+        mobile: Column(
+          children: [
+            buildHomePersonalInfo(size),
+            SizedBox(
+              height: 25,
+            ),
+            const ProfileAnimation(),
+          ],
+        ),
+        tablet: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(child: buildHomePersonalInfo(size)),
+            Expanded(child: const ProfileAnimation()),
+          ],
+        ),
+        desktop: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            buildHomePersonalInfo(size),
+            const ProfileAnimation(),
+          ],
+        ),
+      ),
     );
   }
 
   Column buildHomePersonalInfo(Size size) {
     return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    FadeInDown(
-                      duration: const Duration(milliseconds: 1200),
-                      child: Text(
-                        'Hello It`s Me',
-                        style: AppTextStyles.heroTextStyle(),
-                      ),
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        FadeInDown(
+          duration: const Duration(milliseconds: 1200),
+          child: Text(
+            'Hello It`s Me',
+            style: AppTextStyles.heroTextStyle(),
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        FadeInRight(
+          duration: const Duration(milliseconds: 1400),
+          child: Text(
+            'Ikram Zargar',
+            style: AppTextStyles.headingTextStyle(),
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        FadeInLeft(
+          duration: const Duration(milliseconds: 1400),
+          child: Row(
+            children: [
+              Text(
+                'And I`m a ',
+                style: AppTextStyles.heroTextStyle(),
+              ),
+              AnimatedTextKit(
+                animatedTexts: [
+                  TyperAnimatedText(
+                    'Flutter Developer',
+                    textStyle: AppTextStyles.heroTextStyle().copyWith(
+                      color: Colors.green,
                     ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    FadeInRight(
-                      duration: const Duration(milliseconds: 1400),
-                      child: Text(
-                        'Ikram Zargar',
-                        style: AppTextStyles.headingTextStyle(),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    FadeInLeft(
-                      duration: const Duration(milliseconds: 1400),
-                      child: Row(
-                        children: [
-                          Text(
-                            'And I`m a ',
-                            style: AppTextStyles.heroTextStyle(),
-                          ),
-                          AnimatedTextKit(
-                            animatedTexts: [
-                              TyperAnimatedText(
-                                'Flutter Developer',
-                                textStyle: AppTextStyles.heroTextStyle().copyWith(
-                                  color: Colors.green,
-                                ),
-                              ),
-                            ],
-                            pause: const Duration(milliseconds: 1000),
-                            displayFullTextOnTap: true,
-                            stopPauseOnTap: true,
-                            repeatForever: true,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 15,
-                    ),
-                    FadeInDown(
-                      duration: const Duration(milliseconds: 1600),
-                      child: SizedBox(
-                        width: size.width * 0.5,
-                        child: Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
-                              'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
-                              'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
-                              'nisi ut aliquid ex ea commodi consequatur.',
-                          style: AppTextStyles.normalStyle(),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 22,
-                    ),
-                    FadeInUp(
-                      duration: const Duration(milliseconds: 1600),
-                      child: SizedBox(
-                        height: 48,
-                        child: ListView.separated(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return InkWell(
-                              onTap: () {},
-                              onHover: (value) {
-                                setState(() {
-                                  if (value) {
-                                    socialBThoverIndex = index;
-                                  } else {
-                                    socialBThoverIndex = null;
-                                  }
-                                });
-                              },
-                              borderRadius: BorderRadius.circular(550.0),
-                              hoverColor: AppColor.themeColor,
-                              splashColor: AppColor.lawGreen,
-                              child: buildSocialButtons(
-                                  asset: socialButtons[index],
-                                  hover:
-                                  socialBThoverIndex == index ? true : false),
-                            );
-                          },
-                          separatorBuilder: (context, child) => const SizedBox(
-                            width: 8.0,
-                          ),
-                          itemCount: socialButtons.length,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 18,
-                    ),
-                    FadeInUp(
-                      duration: const Duration(milliseconds: 1800),
-                      child: AppButtons.buildMaterialButton(
-                          onTap: () {}, buttonText: 'Download Cv'),
-                    ),
-                    const SizedBox(
-                      height: 18,
-                    ),
-
-                  ],
+                  ),
+                ],
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                repeatForever: true,
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 15,
+        ),
+        FadeInDown(
+          duration: const Duration(milliseconds: 1600),
+          child: SizedBox(
+            width: size.width * 0.5,
+            child: Text(
+              'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
+              'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
+              'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
+              'nisi ut aliquid ex ea commodi consequatur.',
+              style: AppTextStyles.normalStyle(),
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 22,
+        ),
+        FadeInUp(
+          duration: const Duration(milliseconds: 1600),
+          child: SizedBox(
+            height: 48,
+            child: ListView.separated(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {},
+                  onHover: (value) {
+                    setState(() {
+                      if (value) {
+                        socialBThoverIndex = index;
+                      } else {
+                        socialBThoverIndex = null;
+                      }
+                    });
+                  },
+                  borderRadius: BorderRadius.circular(550.0),
+                  hoverColor: AppColor.themeColor,
+                  splashColor: AppColor.lawGreen,
+                  child: buildSocialButtons(
+                      asset: socialButtons[index],
+                      hover: socialBThoverIndex == index ? true : false),
                 );
+              },
+              separatorBuilder: (context, child) => const SizedBox(
+                width: 8.0,
+              ),
+              itemCount: socialButtons.length,
+            ),
+          ),
+        ),
+        const SizedBox(
+          height: 18,
+        ),
+        FadeInUp(
+          duration: const Duration(milliseconds: 1800),
+          child: AppButtons.buildMaterialButton(
+              onTap: () {}, buttonText: 'Download Cv'),
+        ),
+        const SizedBox(
+          height: 18,
+        ),
+      ],
+    );
   }
 
   Ink buildSocialButtons({required String asset, required bool hover}) {
