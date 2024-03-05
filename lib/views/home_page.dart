@@ -6,10 +6,6 @@ import 'package:my_portfolio/globals/app_buttons.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
 import 'package:my_portfolio/helper%20class/helper.dart';
-import 'package:my_portfolio/views/about_me.dart';
-import 'package:my_portfolio/views/contact.dart';
-import 'package:my_portfolio/views/footer.dart';
-import 'package:my_portfolio/views/my_projects.dart';
 import 'package:my_portfolio/widgets/profile_animations.dart';
 
 class HomePage extends StatefulWidget {
@@ -49,14 +45,14 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Expanded(child: buildHomePersonalInfo(size)),
-            Expanded(child: const ProfileAnimation()),
+            const ProfileAnimation(),
           ],
         ),
         desktop: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            buildHomePersonalInfo(size),
+            Expanded(child: buildHomePersonalInfo(size)),
             const ProfileAnimation(),
           ],
         ),
@@ -119,8 +115,7 @@ class _HomePageState extends State<HomePage> {
         ),
         FadeInDown(
           duration: const Duration(milliseconds: 1600),
-          child: SizedBox(
-            width: size.width * 0.5,
+          child: Expanded(
             child: Text(
               'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
               'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'

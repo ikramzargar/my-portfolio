@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/views/about_me.dart';
 import 'package:my_portfolio/views/home_page.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
@@ -16,7 +17,7 @@ class _DashboardState extends State<Dashboard> {
     'Home',
     'About',
     'Skills',
-    'My Projects',
+    'Projects',
     'Contact',
   ];
   var menuIndex = 0;
@@ -27,7 +28,7 @@ class _DashboardState extends State<Dashboard> {
       //backgroundColor: AppColor.bgColor,
       appBar: AppBar(
         toolbarHeight: 90,
-        titleSpacing: 30,
+        titleSpacing: 40,
         backgroundColor: AppColor.bgColor,
         elevation: 0,
         title: LayoutBuilder(builder: (context, constraints) {
@@ -84,12 +85,13 @@ class _DashboardState extends State<Dashboard> {
                     scrollDirection: Axis.horizontal,
                   ),
                 ),
+                SizedBox(width: 30,),
               ],
             );
           }
         }),
       ),
-      body: HomePage(),
+      body: AboutMe(),
     );
   }
 

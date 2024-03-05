@@ -18,15 +18,14 @@ class Helper extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth < 768) {
           return Container(
-            child: mobile,
+              child: mobile,
               height: size.height,
               width: size.width,
               alignment: Alignment.center,
               padding: EdgeInsetsDirectional.symmetric(
-                vertical: 30,
+                vertical: 35,
                 horizontal: size.width * 0.05,
-          )
-          );
+              ));
         } else if (constraints.maxWidth < 1200) {
           return Container(
               child: tablet,
@@ -34,10 +33,8 @@ class Helper extends StatelessWidget {
               width: size.width,
               alignment: Alignment.center,
               padding: EdgeInsetsDirectional.symmetric(
-                vertical: 30,
                 horizontal: size.width * 0.03,
-              )
-          );
+              ));
         } else {
           return Container(
               child: desktop,
@@ -45,10 +42,8 @@ class Helper extends StatelessWidget {
               width: size.width,
               alignment: Alignment.center,
               padding: EdgeInsetsDirectional.symmetric(
-                vertical: 30,
-                horizontal: size.width * 0.1,
-              )
-          );
+                horizontal: size.width * 0.08,
+              ));
         }
       },
     );
