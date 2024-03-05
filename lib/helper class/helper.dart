@@ -4,12 +4,14 @@ class Helper extends StatelessWidget {
   final Widget mobile;
   final Widget tablet;
   final Widget desktop;
+  final double paddingWidth;
 
   const Helper(
       {super.key,
       required this.mobile,
       required this.tablet,
-      required this.desktop});
+      required this.desktop,
+      required this.paddingWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class Helper extends StatelessWidget {
               alignment: Alignment.center,
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: 35,
-                horizontal: size.width * 0.05,
+                horizontal: paddingWidth,
               ));
         } else if (constraints.maxWidth < 1200) {
           return Container(
@@ -33,7 +35,7 @@ class Helper extends StatelessWidget {
               width: size.width,
               alignment: Alignment.center,
               padding: EdgeInsetsDirectional.symmetric(
-                horizontal: size.width * 0.03,
+                horizontal: paddingWidth,
               ));
         } else {
           return Container(
@@ -42,7 +44,7 @@ class Helper extends StatelessWidget {
               width: size.width,
               alignment: Alignment.center,
               padding: EdgeInsetsDirectional.symmetric(
-                horizontal: size.width * 0.08,
+                horizontal: paddingWidth,
               ));
         }
       },

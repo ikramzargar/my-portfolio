@@ -16,7 +16,8 @@ class AboutMe extends StatefulWidget {
 
 class _AboutMeState extends State<AboutMe> {
   @override
-  Widget build(BuildContext context) {  
+  Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppColor.bgColor2,
       body: Helper(
@@ -48,7 +49,7 @@ class _AboutMeState extends State<AboutMe> {
             ),
             buildAboutMe()
           ],
-        ),
+        ), paddingWidth: size.width * 0.1,
       ),
     );
 

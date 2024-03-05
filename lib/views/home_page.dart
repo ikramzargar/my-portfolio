@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(child: buildHomePersonalInfo(size)),
             const ProfileAnimation(),
           ],
-        ),
+        ), paddingWidth: size.width * 0.1,
       ),
     );
   }

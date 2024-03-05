@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/views/about_me.dart';
+import 'package:my_portfolio/views/contact.dart';
 import 'package:my_portfolio/views/home_page.dart';
+import 'package:my_portfolio/views/my_projects.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
 
@@ -91,7 +93,7 @@ class _DashboardState extends State<Dashboard> {
           }
         }),
       ),
-      body: AboutMe(),
+      body: Contact(),
     );
   }
 
