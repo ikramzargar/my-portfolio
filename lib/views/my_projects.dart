@@ -77,7 +77,11 @@ class _MyProjectsState extends State<MyProjects> {
                         if (value) {
                           hoveredIndex = index;
                         }
+                        else{
+                          hoveredIndex = null;
+                        }
                       });
+
                     },
                     child: Stack(children: [
                       ClipRRect(
@@ -124,6 +128,14 @@ class _MyProjectsState extends State<MyProjects> {
                                 style: AppTextStyles.normalStyle().copyWith(
                                   color: Colors.black87,
                                 ),
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              IconButton(
+                              iconSize: 30,
+                                onPressed: () {},
+                                icon: Icon(Icons.open_in_browser_rounded),
                               ),
                             ],
                           ),
