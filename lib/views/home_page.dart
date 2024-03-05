@@ -6,6 +6,7 @@ import 'package:my_portfolio/globals/app_buttons.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
 import 'package:my_portfolio/views/about_me.dart';
+import 'package:my_portfolio/views/my_projects.dart';
 import 'package:my_portfolio/widgets/profile_animations.dart';
 
 class HomePage extends StatefulWidget {
@@ -192,6 +193,7 @@ class _HomePageState extends State<HomePage> {
               height: 220,
             ),
             AboutMe(),
+            MyProjects(),
           ],
         ),
       ),
