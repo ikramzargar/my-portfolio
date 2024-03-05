@@ -24,6 +24,13 @@ class _DashboardState extends State<Dashboard> {
   ];
   var menuIndex = 0;
 
+  final screenList = const <Widget>[
+    HomePage(),
+    AboutMe(),
+    MyProjects(),
+    Contact(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,13 +94,19 @@ class _DashboardState extends State<Dashboard> {
                     scrollDirection: Axis.horizontal,
                   ),
                 ),
-                SizedBox(width: 30,),
+                SizedBox(
+                  width: 30,
+                ),
               ],
             );
           }
         }),
       ),
-      body: Contact(),
+      body: ListView.builder(
+          itemCount: screenList.length,
+          itemBuilder: (context, index) {
+            return screenList[index];
+          }),
     );
   }
 
