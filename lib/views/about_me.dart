@@ -18,6 +18,8 @@ class _AboutMeState extends State<AboutMe> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
+      padding: EdgeInsetsDirectional.symmetric(
+          vertical: 30, horizontal: size.width * 0.1),
       height: size.height,
       width: size.width,
       color: AppColor.bgColor2,

@@ -116,12 +116,12 @@ class Contact extends StatelessWidget {
             child: TextField(
               cursorColor: Colors.white,
               style: AppTextStyles.normalStyle(),
-              maxLines: 13,
+              maxLines: 12,
               decoration: buildTextFeild(hintText: 'Your Message'),
             ),
           ),
           const SizedBox(
-            height: 35,
+            height: 40,
           ),
           AppButtons.buildMaterialButton(onTap: (){}, buttonText: 'Submit')
         ],
