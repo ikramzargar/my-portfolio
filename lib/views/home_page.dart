@@ -28,9 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      backgroundColor: AppColor.bgColor,
-      body: Helper(
+    return Helper(
         mobile: Column(
           children: [
             buildHomePersonalInfo(size),
@@ -55,9 +53,9 @@ class _HomePageState extends State<HomePage> {
             Expanded(child: buildHomePersonalInfo(size)),
             const ProfileAnimation(),
           ],
-        ), paddingWidth: size.width * 0.1,
-      ),
-    );
+        ), paddingWidth: size.width * 0.1, bgColor: AppColor.bgColor2,
+      );
+
   }
 
   Column buildHomePersonalInfo(Size size) {

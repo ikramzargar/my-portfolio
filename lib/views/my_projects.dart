@@ -35,7 +35,7 @@ class _MyProjectsState extends State<MyProjects> {
         mainAxisSize: MainAxisSize.min,
         children: [
           buildProjectText(),
-          SizedBox(height: 40.0),
+          const SizedBox(height: 40.0),
           buildProjectGridView(crossAxisCount: 1)
         ],
       ),
@@ -55,7 +55,7 @@ class _MyProjectsState extends State<MyProjects> {
           buildProjectGridView(crossAxisCount: 3),
         ],
       ),
-      paddingWidth: size.width * 0.1,
+      paddingWidth: size.width * 0.1, bgColor: AppColor.bgColor2,
     );
   }
 
