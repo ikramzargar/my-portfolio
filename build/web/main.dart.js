@@ -79355,7 +79355,7 @@ $0(){},
 $S:0}
 A.w7.prototype={
 ae(){var s=t.s
-return new A.O9(A.a(["assets/images/face.png","assets/images/twit.png","assets/images/in.png","assets/images/insta.png","assets/images/git.png"],s),A.a(["https://www.facebook.com/xargarikram?mibextid=ZbWKwL","https://x.com/IkramZargar?t=drQtcixW5h8NDMZcxnBdSw&s=09","https://www.linkedin.com/in/ikramzargarhttps://www.instagram.com/ikram_zargar?igsh=MTZ3NTlibnZ0M3hzOA==","https://github.com/ikramzargar"],s),B.j)}}
+return new A.O9(A.a(["assets/images/face.png","assets/images/twit.png","assets/images/in.png","assets/images/insta.png","assets/images/git.png"],s),A.a(["https://www.facebook.com/xargarikram?mibextid=ZbWKwL","https://x.com/IkramZargar?t=drQtcixW5h8NDMZcxnBdSw&s=09","https://www.linkedin.com/in/ikramzargar","https://www.instagram.com/ikram_zargar?igsh=MTZ3NTlibnZ0M3hzOA==","https://github.com/ikramzargar"],s),B.j)}}
 A.O9.prototype={
 J(a){var s=A.bi(a,null,t.w).w.a,r=t.p
 return new A.nd(A.hc(A.a([this.Dv(s),B.Lo,B.wL],r),B.aB,B.ah,B.b_),A.jW(A.a([A.l0(this.Dv(s),1),B.mb],r),B.dz,B.rM,B.b_),A.jW(A.a([A.l0(this.Dv(s),1),B.mb],r),B.dz,B.rM,B.b_),s.a*0.1,B.j1,null)},

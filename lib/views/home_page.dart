@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   final links = <String>[
     'https://www.facebook.com/xargarikram?mibextid=ZbWKwL',
     'https://x.com/IkramZargar?t=drQtcixW5h8NDMZcxnBdSw&s=09',
-    'https://www.linkedin.com/in/ikramzargar'
+    'https://www.linkedin.com/in/ikramzargar',
     'https://www.instagram.com/ikram_zargar?igsh=MTZ3NTlibnZ0M3hzOA==',
     'https://github.com/ikramzargar',
   ];
