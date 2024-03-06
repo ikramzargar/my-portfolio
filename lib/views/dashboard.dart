@@ -35,12 +35,14 @@ class _DashboardState extends State<Dashboard> {
     Footer(),
   ];
 
-  Future scrollTo({required int index}) async{
-    _itemScrollController.scrollTo(
-        index: index,
-      duration:Duration(seconds: 2),
-        curve: Curves.fastLinearToSlowEaseIn,
-    ).whenComplete(() {
+  Future scrollTo({required int index}) async {
+    _itemScrollController
+        .scrollTo(
+      index: index,
+      duration: Duration(seconds: 2),
+      curve: Curves.fastLinearToSlowEaseIn,
+    )
+        .whenComplete(() {
       setState(() {
         menuIndex = index;
       });
@@ -63,7 +65,10 @@ class _DashboardState extends State<Dashboard> {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const Text('Portfolio'),
+                  Text(
+                    'Portfolio',
+                    style: AppTextStyles.headerTextStyle(),
+                  ),
                   const Spacer(),
                   PopupMenuButton(
                     icon: const Icon(
@@ -74,19 +79,18 @@ class _DashboardState extends State<Dashboard> {
                     color: AppColor.bgColor2,
                     position: PopupMenuPosition.under,
                     constraints:
-                    BoxConstraints.tightFor(width: size.width * 0.9),
+                        BoxConstraints.tightFor(width: size.width * 0.9),
                     itemBuilder: (BuildContext context) => menuItems
                         .asMap()
                         .entries
                         .map(
                           (e) => PopupMenuItem(
-                        textStyle: AppTextStyles.headerTextStyle(),
-                        onTap: () {
-                          scrollTo(index: e.key);
-                        },
-                        child: Text(e.value),
-                      ),
-                    )
+                            onTap: () {
+                              scrollTo(index: e.key);
+                            },
+                            child: Text(e.value,style:AppTextStyles.headerTextStyle(),),
+                          ),
+                        )
                         .toList(),
                   ),
                 ],
@@ -95,7 +99,10 @@ class _DashboardState extends State<Dashboard> {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const Text('Portfolio'),
+                  Text(
+                    'Portfolio',
+                    style: AppTextStyles.headerTextStyle(),
+                  ),
                   const Spacer(),
                   SizedBox(
                     height: 30,
@@ -103,8 +110,7 @@ class _DashboardState extends State<Dashboard> {
                       itemCount: menuItems.length,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      separatorBuilder: (context, child) =>
-                         SizedBox(width: 8),
+                      separatorBuilder: (context, child) => SizedBox(width: 8),
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
@@ -133,12 +139,15 @@ class _DashboardState extends State<Dashboard> {
           },
         ),
       ),
-      body: ScrollablePositionedList.builder(
-        itemScrollController: _itemScrollController,
-        itemCount: screenList.length,
-        itemBuilder: (context, index) {
-          return screenList[index];
-        },
+      body: Scrollbar(
+        trackVisibility: true,
+        child: ScrollablePositionedList.builder(
+          itemScrollController: _itemScrollController,
+          itemCount: screenList.length,
+          itemBuilder: (context, index) {
+            return screenList[index];
+          },
+        ),
       ),
     );
   }
@@ -151,7 +160,8 @@ class _DashboardState extends State<Dashboard> {
       transform: hover ? onMenuHover : null,
       child: Text(
         menuItems[index],
-        style: AppTextStyles.headerTextStyle().copyWith( color: hover ? AppColor.themeColor : Colors.white),
+        style: AppTextStyles.headerTextStyle()
+            .copyWith(color: hover ? AppColor.themeColor : Colors.white),
       ),
     );
   }
