@@ -5,6 +5,7 @@ import 'package:my_portfolio/globals/app_assets.dart';
 import 'package:my_portfolio/globals/app_buttons.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
 import 'package:my_portfolio/globals/app_text_styles.dart';
+import 'package:my_portfolio/globals/utils.dart';
 import 'package:my_portfolio/helper%20class/helper.dart';
 import 'package:my_portfolio/widgets/profile_animations.dart';
 
@@ -19,11 +20,20 @@ class _HomePageState extends State<HomePage> {
   final socialButtons = <String>[
     AppAssets.facebook,
     AppAssets.twitter,
-    AppAssets.linkedin,
+    //AppAssets.linkedin,
     AppAssets.insta,
     AppAssets.github,
   ];
   var socialBThoverIndex;
+
+
+  final links = <String>[
+    'https://www.facebook.com/xargarikram?mibextid=ZbWKwL',
+    'https://x.com/IkramZargar?t=drQtcixW5h8NDMZcxnBdSw&s=09',
+    'https://www.instagram.com/ikram_zargar?igsh=MTZ3NTlibnZ0M3hzOA==',
+    'https://github.com/ikramzargar',
+
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -133,7 +143,9 @@ class _HomePageState extends State<HomePage> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Utils().launch(links[index]);
+                  },
                   onHover: (value) {
                     setState(() {
                       if (value) {
@@ -187,7 +199,7 @@ class _HomePageState extends State<HomePage> {
         asset,
         width: 10,
         height: 12,
-        color: hover ? AppColor.bgColor : AppColor.themeColor,
+        color: hover ? AppColor.aqua : Colors.green,
         // fit: BoxFit.fill,
       ),
     );

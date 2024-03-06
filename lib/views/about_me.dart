@@ -43,7 +43,7 @@ class _AboutMeState extends State<AboutMe> {
           children: [
             buildProfilePic(),
             const SizedBox(
-              width: 25,
+              width: 60,
             ),
             Expanded(child: buildAboutMe(),),
           ],
