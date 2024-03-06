@@ -40,10 +40,10 @@ class _HomePageState extends State<HomePage> {
       mobile: Column(
         children: [
           buildHomePersonalInfo(size),
-          const SizedBox(
-            height: 25,
-          ),
-          const ProfileAnimation(),
+          // const SizedBox(
+          //   height: 25,
+          // ),
+          // const ProfileAnimation(),
         ],
       ),
       tablet: Row(
@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          const ProfileAnimation(),
+          // const ProfileAnimation(),
         ],
       ),
       desktop: Row(
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          const ProfileAnimation(),
+          // const ProfileAnimation(),
         ],
       ),
       paddingWidth: size.width * 0.1,
