@@ -29,7 +29,7 @@ class _DashboardState extends State<Dashboard> {
   var menuIndex = 0;
 
   final screenList = const <Widget>[
-    HomePage(),
+    // HomePage(),
     AboutMe(),
     MyProjects(),
     Contact(),
