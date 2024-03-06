@@ -29,33 +29,34 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Helper(
-        mobile: Column(
-          children: [
-            buildHomePersonalInfo(size),
-            SizedBox(
-              height: 25,
-            ),
-            const ProfileAnimation(),
-          ],
-        ),
-        tablet: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(child: buildHomePersonalInfo(size)),
-            const ProfileAnimation(),
-          ],
-        ),
-        desktop: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Expanded(child: buildHomePersonalInfo(size)),
-            const ProfileAnimation(),
-          ],
-        ), paddingWidth: size.width * 0.1, bgColor: AppColor.bgColor2,
-      );
-
+      mobile: Column(
+        children: [
+          buildHomePersonalInfo(size),
+          SizedBox(
+            height: 25,
+          ),
+          const ProfileAnimation(),
+        ],
+      ),
+      tablet: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(child: buildHomePersonalInfo(size)),
+          const ProfileAnimation(),
+        ],
+      ),
+      desktop: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(child: buildHomePersonalInfo(size)),
+          const ProfileAnimation(),
+        ],
+      ),
+      paddingWidth: size.width * 0.1,
+      bgGradient: AppColor.gradient1,
+    );
   }
 
   Column buildHomePersonalInfo(Size size) {
@@ -115,10 +116,8 @@ class _HomePageState extends State<HomePage> {
           duration: const Duration(milliseconds: 1600),
           child: Expanded(
             child: Text(
-              'Lorem ipsum dolor sit amet, consectetur adipisci elit,'
-              'sed eiusmod tempor incidunt ut labore et dolore magna aliqua.'
-              'Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,'
-              'nisi ut aliquid ex ea commodi consequatur.',
+    'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.'
+    'As a student in the field of computer science, I`m constantly exploring and learning about the latest advancements in technology.',
               style: AppTextStyles.normalStyle(),
             ),
           ),

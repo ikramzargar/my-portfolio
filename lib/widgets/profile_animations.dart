@@ -22,7 +22,7 @@ class _ProfileAnimationState extends State<ProfileAnimation>
           ..repeat(reverse: true);
 
     _animation =
-        Tween(begin: Offset(0,0.1), end: Offset(0, 0.2)).animate(_controller);
+        Tween(begin: Offset(0,0), end: Offset(0, 0.1)).animate(_controller);
   }
   @override
   void dispose() {
@@ -37,7 +37,7 @@ class _ProfileAnimationState extends State<ProfileAnimation>
       child: Image.asset(
         AppAssets.profile1,
         width: 360,
-        height: 390,
+        height: 400,
       ),
     );
   }

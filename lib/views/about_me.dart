@@ -25,13 +25,13 @@ class _AboutMeState extends State<AboutMe> {
             const SizedBox(
               height: 35,
             ),
-            buildProfilePic(),
+            // buildProfilePic(),
           ],
         ),
         tablet: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            buildProfilePic(),
+            // buildProfilePic(),
           const  SizedBox(
               width: 25,
             ),
@@ -49,7 +49,8 @@ class _AboutMeState extends State<AboutMe> {
           ],
         ),
         paddingWidth: size.width * 0.1,
-        bgColor: AppColor.bgColor2,
+
+      bgGradient: AppColor.gradient2,
       );
 
   }

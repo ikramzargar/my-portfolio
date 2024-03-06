@@ -96,7 +96,7 @@ class Contact extends StatelessWidget {
         tablet: buildContactForm(),
         desktop: buildContactForm(),
         paddingWidth: size.width * 0.2,
-        bgColor: AppColor.bgColor2,
+        bgGradient: AppColor.gradient2,
       );
   }
 

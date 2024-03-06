@@ -55,7 +55,8 @@ class _MyProjectsState extends State<MyProjects> {
           buildProjectGridView(crossAxisCount: 3),
         ],
       ),
-      paddingWidth: size.width * 0.1, bgColor: AppColor.bgColor2,
+      paddingWidth: size.width * 0.1,
+      bgGradient: AppColor.gradient1,
     );
   }
 

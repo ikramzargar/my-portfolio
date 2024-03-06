@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/globals/app_colors.dart';
 
 class Helper extends StatelessWidget {
   final Widget mobile;
   final Widget tablet;
   final Widget desktop;
   final double paddingWidth;
-  final Color bgColor;
+  final Gradient bgGradient;
 
   const Helper(
       {super.key,
@@ -13,7 +14,7 @@ class Helper extends StatelessWidget {
       required this.tablet,
       required this.desktop,
       required this.paddingWidth,
-      required this.bgColor});
+      required this.bgGradient});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,9 @@ class Helper extends StatelessWidget {
             //  height: size.height,
               width: size.width,
               alignment: Alignment.center,
-              color: bgColor,
+              decoration: BoxDecoration(
+                  gradient: bgGradient,
+              ),
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: size.height *0.2,
                 horizontal: paddingWidth,
@@ -37,7 +40,10 @@ class Helper extends StatelessWidget {
               //height: size.height,
               width: size.width,
               alignment: Alignment.center,
-              color: bgColor,
+              decoration: BoxDecoration(
+                gradient: bgGradient,
+              ),
+              // color: bgColor,
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: size.height *0.2,
                 horizontal: paddingWidth,
@@ -48,7 +54,10 @@ class Helper extends StatelessWidget {
              // height: size.height,
               width: size.width,
               alignment: Alignment.center,
-              color: bgColor,
+              decoration: BoxDecoration(
+                  gradient:bgGradient,
+              ),
+              // color: bgColor,
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: size.height *0.2,
                 horizontal: paddingWidth,

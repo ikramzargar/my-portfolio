@@ -7,4 +7,19 @@ class AppColor{
   static Color lawGreen = const Color(0xff7CFC00);
   static Color bgColor2 = const Color(0xff00416A);
   static Color robinEdgeBlue = const Color(0xff00CCCC);
+
+  static Gradient gradient1 = const LinearGradient(
+    colors: [Color(0xff780206), Color(0xff061161)],
+    stops: [0, 1],
+    begin: Alignment.centerRight,
+    end: Alignment.centerLeft,
+  );
+  static Gradient gradient2 = const LinearGradient(
+    colors: [Color(0xff780206), Color(0xff061161)],
+    stops: [0, 1],
+    begin: Alignment.bottomLeft,
+    end: Alignment.topRight,
+  );
+
 }
+

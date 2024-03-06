@@ -7,6 +7,7 @@ import 'package:my_portfolio/views/my_projects.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
+import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -53,12 +54,17 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: AppColor.bgColor,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
-        backgroundColor: AppColor.bgColor,
-        toolbarHeight: 90,
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: AppColor.gradient1,
+          ),
+        ),
+        toolbarHeight: 70,
+       backgroundColor: Colors.transparent,
         titleSpacing: 40,
-        elevation: 0,
+        elevation: 2,
         title: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < 768) {
@@ -161,7 +167,7 @@ class _DashboardState extends State<Dashboard> {
       child: Text(
         menuItems[index],
         style: AppTextStyles.headerTextStyle()
-            .copyWith(color: hover ? AppColor.themeColor : Colors.white),
+            .copyWith(color: hover ? Colors.green : Colors.white),
       ),
     );
   }
