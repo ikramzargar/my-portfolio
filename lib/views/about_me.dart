@@ -81,7 +81,7 @@ class _AboutMeState extends State<AboutMe> {
                 TextSpan(
                   text: 'Me',
                   style: AppTextStyles.headingTextStyle()
-                      .copyWith(fontSize: 30, color: AppColor.robinEdgeBlue),
+                      .copyWith(fontSize: 30, color: Colors.green),
                 )
               ],
             ),
@@ -103,11 +103,10 @@ class _AboutMeState extends State<AboutMe> {
         FadeInLeft(
           duration: Duration(milliseconds: 1600),
           child: Text(
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt '
-            'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris '
-            'nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum '
-            'dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt'
-            'mollit anim id est laborum.',
+            'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.'
+             'As a student in the field of computer science, I`m constantly exploring and learning about the latest advancements in technology. '
+                'Since my childhood i have always wanted to develop apps for mobile and growing up i took interest in flutter.'
+                '',
             style: AppTextStyles.normalStyle(),
           ),
         ),

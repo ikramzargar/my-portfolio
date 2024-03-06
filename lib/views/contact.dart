@@ -210,7 +210,7 @@ class Contact extends StatelessWidget {
             TextSpan(
               text: 'Me',
               style: AppTextStyles.headingTextStyle()
-                  .copyWith(fontSize: 30, color: AppColor.robinEdgeBlue),
+                  .copyWith(fontSize: 30, color:Colors.green),
             )
           ],
         ),

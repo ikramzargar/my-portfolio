@@ -116,8 +116,7 @@ class _HomePageState extends State<HomePage> {
           duration: const Duration(milliseconds: 1600),
           child: Expanded(
             child: Text(
-    'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.'
-    'As a student in the field of computer science, I`m constantly exploring and learning about the latest advancements in technology.',
+    'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.',
               style: AppTextStyles.normalStyle(),
             ),
           ),

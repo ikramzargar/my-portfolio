@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
-import '../globals/constants.dart';
 import '../helper class/helper.dart';
 
 class MyProjects extends StatefulWidget {
@@ -164,7 +163,7 @@ class _MyProjectsState extends State<MyProjects> {
           children: [
             TextSpan(
               text: 'Projects',
-              style: AppTextStyles.headingTextStyle().copyWith(fontSize: 30.0,color: AppColor.robinEdgeBlue),
+              style: AppTextStyles.headingTextStyle().copyWith(fontSize: 30.0,color: Colors.green),
             )
           ],
         ),
