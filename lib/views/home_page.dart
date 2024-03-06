@@ -39,26 +39,26 @@ class _HomePageState extends State<HomePage> {
     return Helper(
       mobile: Column(
         children: [
-          buildHomePersonalInfo(size),
+          //buildHomePersonalInfo(size),
           // const SizedBox(
           //   height: 25,
           // ),
-          // const ProfileAnimation(),
+          const ProfileAnimation(),
         ],
       ),
       tablet: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Expanded(child: buildHomePersonalInfo(size)),
-          // const ProfileAnimation(),
+          // Expanded(child: buildHomePersonalInfo(size)),
+          const ProfileAnimation(),
         ],
       ),
       desktop: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Expanded(child: buildHomePersonalInfo(size)),
+          // Expanded(child: buildHomePersonalInfo(size)),
           // const ProfileAnimation(),
         ],
       ),

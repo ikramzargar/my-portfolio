@@ -145,15 +145,12 @@ class _DashboardState extends State<Dashboard> {
           },
         ),
       ),
-      body: Scrollbar(
-        trackVisibility: true,
-        child: ScrollablePositionedList.builder(
-          itemScrollController: _itemScrollController,
-          itemCount: screenList.length,
-          itemBuilder: (context, index) {
-            return screenList[index];
-          },
-        ),
+      body:ListView.builder(
+        // itemScrollController: _itemScrollController,
+        itemCount: screenList.length,
+        itemBuilder: (context, index) {
+          return screenList[index];
+        },
       ),
     );
   }
