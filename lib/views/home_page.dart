@@ -171,11 +171,11 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 18,
         ),
-        FadeInUp(
-          duration: const Duration(milliseconds: 1800),
-          child: AppButtons.buildMaterialButton(
-              onTap: () {}, buttonText: 'Download Cv'),
-        ),
+        // FadeInUp(
+        //   duration: const Duration(milliseconds: 1800),
+        //   child: AppButtons.buildMaterialButton(
+        //       onTap: () {}, buttonText: 'Download Cv'),
+        // ),
         const SizedBox(
           height: 18,
         ),
@@ -183,23 +183,23 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Ink buildSocialButtons({required String asset, required bool hover}) {
-    return Ink(
-      width: 45,
-      height: 45,
-      decoration: BoxDecoration(
-        border: Border.all(color: AppColor.themeColor, width: 2.0),
-        color: AppColor.bgColor,
-        shape: BoxShape.circle,
-      ),
-      padding: const EdgeInsets.all(6),
-      child: Image.asset(
-        asset,
-        width: 10,
-        height: 12,
-        color: hover ? AppColor.aqua : Colors.green,
-        // fit: BoxFit.fill,
-      ),
-    );
-  }
+  // Ink buildSocialButtons({required String asset, required bool hover}) {
+  //   return Ink(
+  //     width: 45,
+  //     height: 45,
+  //     decoration: BoxDecoration(
+  //       border: Border.all(color: AppColor.themeColor, width: 2.0),
+  //       color: AppColor.bgColor,
+  //       shape: BoxShape.circle,
+  //     ),
+  //     padding: const EdgeInsets.all(6),
+  //     child: Image.asset(
+  //       asset,
+  //       width: 10,
+  //       height: 12,
+  //       color: hover ? AppColor.aqua : Colors.green,
+  //       // fit: BoxFit.fill,
+  //     ),
+  //   );
+  // }
 }
