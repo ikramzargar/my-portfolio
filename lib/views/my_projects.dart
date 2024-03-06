@@ -16,11 +16,11 @@ class _MyProjectsState extends State<MyProjects> {
   final onH0verEffect = Matrix4.identity()..scale(1.0);
 
   List images = <String>[
-    AppAssets.work1,
+    AppAssets.project1,
     AppAssets.work2,
-    AppAssets.work1,
     AppAssets.work2,
-    AppAssets.work1,
+    AppAssets.work2,
+    AppAssets.work2,
     AppAssets.work2,
   ];
 
@@ -106,26 +106,24 @@ class _MyProjectsState extends State<MyProjects> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       gradient: LinearGradient(
-                          colors: [
-                            AppColor.themeColor.withOpacity(1.0),
-                            AppColor.themeColor.withOpacity(0.9),
-                            AppColor.themeColor.withOpacity(0.8),
-                            AppColor.themeColor.withOpacity(0.6),
-                          ],
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter),
+                        colors: [Color(0xffdc2424), Color(0xff4a569d)],
+                        stops: [0, 1],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                     ),
                     child: Column(
                       children: [
                         Text(
                           'App Development',
-                          style: AppTextStyles.heroTextStyle().copyWith(color: Colors.black87, fontSize: 20),
+                          style: AppTextStyles.heroTextStyle()
+                              .copyWith(color: Colors.black87, fontSize: 20),
                         ),
                         SizedBox(height: 15.0),
                         Text(
                           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                          style:
-                          AppTextStyles.normalStyle().copyWith(color: Colors.black87),
+                          style: AppTextStyles.normalStyle()
+                              .copyWith(color: Colors.black87),
                           textAlign: TextAlign.center,
                         ),
                         SizedBox(height: 30.0),
@@ -133,13 +131,6 @@ class _MyProjectsState extends State<MyProjects> {
                           maxRadius: 25,
                           backgroundColor: Colors.white,
                           child: Icon(Icons.open_in_browser_rounded),
-
-                          // child: Image.asset(
-                          //   AppAssets.share,
-                          //   width: 25,
-                          //   height: 25,
-                          //   fit: BoxFit.fill,
-                          // ),
                         )
                       ],
                     ),
@@ -163,7 +154,8 @@ class _MyProjectsState extends State<MyProjects> {
           children: [
             TextSpan(
               text: 'Projects',
-              style: AppTextStyles.headingTextStyle().copyWith(fontSize: 30.0,color: Colors.green),
+              style: AppTextStyles.headingTextStyle()
+                  .copyWith(fontSize: 30.0, color: Colors.green),
             )
           ],
         ),
