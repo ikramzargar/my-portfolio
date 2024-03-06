@@ -20,19 +20,17 @@ class _HomePageState extends State<HomePage> {
   final socialButtons = <String>[
     AppAssets.facebook,
     AppAssets.twitter,
-    //AppAssets.linkedin,
+    AppAssets.linkedin,
     AppAssets.insta,
     AppAssets.github,
   ];
   var socialBThoverIndex;
-
 
   final links = <String>[
     'https://www.facebook.com/xargarikram?mibextid=ZbWKwL',
     'https://x.com/IkramZargar?t=drQtcixW5h8NDMZcxnBdSw&s=09',
     'https://www.instagram.com/ikram_zargar?igsh=MTZ3NTlibnZ0M3hzOA==',
     'https://github.com/ikramzargar',
-
   ];
 
   @override
@@ -45,11 +43,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 25,
           ),
-      Image.asset(
-        AppAssets.profile1,
-        width: 360,
-        height: 400,
-      ),
+          const ProfileAnimation(),
         ],
       ),
       tablet: Row(
@@ -57,11 +51,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          Image.asset(
-            AppAssets.profile1,
-            width: 360,
-            height: 400,
-          ),
+          const ProfileAnimation(),
         ],
       ),
       desktop: Row(
@@ -69,11 +59,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          Image.asset(
-            AppAssets.profile1,
-            width: 360,
-            height: 400,
-          ),
+          const ProfileAnimation(),
         ],
       ),
       paddingWidth: size.width * 0.1,
@@ -138,7 +124,7 @@ class _HomePageState extends State<HomePage> {
           duration: const Duration(milliseconds: 1600),
           child: Expanded(
             child: Text(
-    'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.',
+              'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.',
               style: AppTextStyles.normalStyle(),
             ),
           ),
@@ -146,42 +132,42 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 22,
         ),
-        FadeInUp(
-          duration: const Duration(milliseconds: 1600),
-          child: SizedBox(
-            height: 48,
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Utils().launch(links[index]);
-                  },
-                  onHover: (value) {
-                    setState(() {
-                      if (value) {
-                        socialBThoverIndex = index;
-                      } else {
-                        socialBThoverIndex = null;
-                      }
-                    });
-                  },
-                  borderRadius: BorderRadius.circular(550.0),
-                  hoverColor: AppColor.themeColor,
-                  splashColor: AppColor.lawGreen,
-                  child: buildSocialButtons(
-                      asset: socialButtons[index],
-                      hover: socialBThoverIndex == index ? true : false),
-                );
-              },
-              separatorBuilder: (context, child) => const SizedBox(
-                width: 8.0,
-              ),
-              itemCount: socialButtons.length,
-            ),
-          ),
-        ),
+        // FadeInUp(
+        //   duration: const Duration(milliseconds: 1600),
+        //   child: SizedBox(
+        //     height: 48,
+        //     child: ListView.separated(
+        //       shrinkWrap: true,
+        //       scrollDirection: Axis.horizontal,
+        //       itemBuilder: (context, index) {
+        //         return InkWell(
+        //           onTap: () {
+        //             Utils().launch(links[index]);
+        //           },
+        //           onHover: (value) {
+        //             setState(() {
+        //               if (value) {
+        //                 socialBThoverIndex = index;
+        //               } else {
+        //                 socialBThoverIndex = null;
+        //               }
+        //             });
+        //           },
+        //           borderRadius: BorderRadius.circular(550.0),
+        //           hoverColor: AppColor.themeColor,
+        //           splashColor: AppColor.lawGreen,
+        //           child: buildSocialButtons(
+        //               asset: socialButtons[index],
+        //               hover: socialBThoverIndex == index ? true : false),
+        //         );
+        //       },
+        //       separatorBuilder: (context, child) => const SizedBox(
+        //         width: 8.0,
+        //       ),
+        //       itemCount: socialButtons.length,
+        //     ),
+        //   ),
+        // ),
         const SizedBox(
           height: 18,
         ),
