@@ -51,7 +51,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          const ProfileAnimation(),
+          const Expanded(child:  ProfileAnimation()),
         ],
       ),
       desktop: Row(
@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
-          const ProfileAnimation(),
+          const   Expanded(child: ProfileAnimation()),
         ],
       ),
       paddingWidth: size.width * 0.1,
@@ -122,11 +122,9 @@ class _HomePageState extends State<HomePage> {
         ),
         FadeInDown(
           duration: const Duration(milliseconds: 1600),
-          child: Expanded(
-            child: Text(
-              'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.',
-              style: AppTextStyles.normalStyle(),
-            ),
+          child: Text(
+            'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.',
+            style: AppTextStyles.normalStyle(),
           ),
         ),
         const SizedBox(
