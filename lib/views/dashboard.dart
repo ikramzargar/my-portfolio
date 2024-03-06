@@ -7,7 +7,6 @@ import 'package:my_portfolio/views/my_projects.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
-import 'package:flutter_gradient_app_bar/flutter_gradient_app_bar.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -17,6 +16,10 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  final ItemPositionsListener itemPositionsListener =
+      ItemPositionsListener.create();
+  final ScrollOffsetListener scrollOffsetListener =
+      ScrollOffsetListener.create();
   final ItemScrollController _itemScrollController = ItemScrollController();
   final onMenuHover = Matrix4.identity()..scale(1.0);
   final menuItems = <String>[
@@ -50,6 +53,7 @@ class _DashboardState extends State<Dashboard> {
     });
   }
 
+  final yourScrollController = ScrollController();
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -62,7 +66,7 @@ class _DashboardState extends State<Dashboard> {
           ),
         ),
         toolbarHeight: 70,
-       backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         titleSpacing: 40,
         elevation: 2,
         title: LayoutBuilder(
@@ -94,7 +98,10 @@ class _DashboardState extends State<Dashboard> {
                             onTap: () {
                               scrollTo(index: e.key);
                             },
-                            child: Text(e.value,style:AppTextStyles.headerTextStyle(),),
+                            child: Text(
+                              e.value,
+                              style: AppTextStyles.headerTextStyle(),
+                            ),
                           ),
                         )
                         .toList(),
@@ -138,16 +145,18 @@ class _DashboardState extends State<Dashboard> {
                       },
                     ),
                   ),
-                  SizedBox(width: 30),
+                  const SizedBox(width: 30),
                 ],
               );
             }
           },
         ),
       ),
-      body:ListView.builder(
-        // itemScrollController: _itemScrollController,
+      body: ScrollablePositionedList.builder(
         itemCount: screenList.length,
+        itemScrollController: _itemScrollController,
+        itemPositionsListener: itemPositionsListener,
+        scrollOffsetListener: scrollOffsetListener,
         itemBuilder: (context, index) {
           return screenList[index];
         },
