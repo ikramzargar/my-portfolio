@@ -39,10 +39,10 @@ class _HomePageState extends State<HomePage> {
     return Helper(
       mobile: Column(
         children: [
-          //buildHomePersonalInfo(size),
-          // const SizedBox(
-          //   height: 25,
-          // ),
+          buildHomePersonalInfo(size),
+          const SizedBox(
+            height: 25,
+          ),
           const ProfileAnimation(),
         ],
       ),
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          // Expanded(child: buildHomePersonalInfo(size)),
+          Expanded(child: buildHomePersonalInfo(size)),
           const ProfileAnimation(),
         ],
       ),
@@ -58,8 +58,8 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          // Expanded(child: buildHomePersonalInfo(size)),
-          // const ProfileAnimation(),
+          Expanded(child: buildHomePersonalInfo(size)),
+          const ProfileAnimation(),
         ],
       ),
       paddingWidth: size.width * 0.1,
@@ -132,50 +132,50 @@ class _HomePageState extends State<HomePage> {
         const SizedBox(
           height: 22,
         ),
-        // FadeInUp(
-        //   duration: const Duration(milliseconds: 1600),
-        //   child: SizedBox(
-        //     height: 48,
-        //     child: ListView.separated(
-        //       shrinkWrap: true,
-        //       scrollDirection: Axis.horizontal,
-        //       itemBuilder: (context, index) {
-        //         return InkWell(
-        //           onTap: () {
-        //             Utils().launch(links[index]);
-        //           },
-        //           onHover: (value) {
-        //             setState(() {
-        //               if (value) {
-        //                 socialBThoverIndex = index;
-        //               } else {
-        //                 socialBThoverIndex = null;
-        //               }
-        //             });
-        //           },
-        //           borderRadius: BorderRadius.circular(550.0),
-        //           hoverColor: AppColor.themeColor,
-        //           splashColor: AppColor.lawGreen,
-        //           child: buildSocialButtons(
-        //               asset: socialButtons[index],
-        //               hover: socialBThoverIndex == index ? true : false),
-        //         );
-        //       },
-        //       separatorBuilder: (context, child) => const SizedBox(
-        //         width: 8.0,
-        //       ),
-        //       itemCount: socialButtons.length,
-        //     ),
-        //   ),
-        // ),
+        FadeInUp(
+          duration: const Duration(milliseconds: 1600),
+          child: SizedBox(
+            height: 48,
+            child: ListView.separated(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    Utils().launch(links[index]);
+                  },
+                  onHover: (value) {
+                    setState(() {
+                      if (value) {
+                        socialBThoverIndex = index;
+                      } else {
+                        socialBThoverIndex = null;
+                      }
+                    });
+                  },
+                  borderRadius: BorderRadius.circular(550.0),
+                  hoverColor: AppColor.themeColor,
+                  splashColor: AppColor.lawGreen,
+                  child: buildSocialButtons(
+                      asset: socialButtons[index],
+                      hover: socialBThoverIndex == index ? true : false),
+                );
+              },
+              separatorBuilder: (context, child) => const SizedBox(
+                width: 8.0,
+              ),
+              itemCount: socialButtons.length,
+            ),
+          ),
+        ),
         const SizedBox(
           height: 18,
         ),
-        // FadeInUp(
-        //   duration: const Duration(milliseconds: 1800),
-        //   child: AppButtons.buildMaterialButton(
-        //       onTap: () {}, buttonText: 'Download Cv'),
-        // ),
+        FadeInUp(
+          duration: const Duration(milliseconds: 1800),
+          child: AppButtons.buildMaterialButton(
+              onTap: () {}, buttonText: 'Download Cv'),
+        ),
         const SizedBox(
           height: 18,
         ),
@@ -183,23 +183,23 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // Ink buildSocialButtons({required String asset, required bool hover}) {
-  //   return Ink(
-  //     width: 45,
-  //     height: 45,
-  //     decoration: BoxDecoration(
-  //       border: Border.all(color: AppColor.themeColor, width: 2.0),
-  //       color: AppColor.bgColor,
-  //       shape: BoxShape.circle,
-  //     ),
-  //     padding: const EdgeInsets.all(6),
-  //     child: Image.asset(
-  //       asset,
-  //       width: 10,
-  //       height: 12,
-  //       color: hover ? AppColor.aqua : Colors.green,
-  //       // fit: BoxFit.fill,
-  //     ),
-  //   );
-  // }
+  Ink buildSocialButtons({required String asset, required bool hover}) {
+    return Ink(
+      width: 45,
+      height: 45,
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColor.themeColor, width: 2.0),
+        color: AppColor.bgColor,
+        shape: BoxShape.circle,
+      ),
+      padding: const EdgeInsets.all(6),
+      child: Image.asset(
+        asset,
+        width: 10,
+        height: 12,
+        color: hover ? AppColor.aqua : Colors.green,
+        // fit: BoxFit.fill,
+      ),
+    );
+  }
 }
