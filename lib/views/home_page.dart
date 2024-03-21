@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Expanded(child: buildHomePersonalInfo(size)),
+          SizedBox(width: 255,),
           const   Expanded(child: ProfileAnimation()),
         ],
       ),

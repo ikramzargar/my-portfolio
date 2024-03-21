@@ -9,17 +9,21 @@ class AppColor{
   static Color robinEdgeBlue = const Color(0xff00CCCC);
 
   static Gradient gradient1 = const LinearGradient(
-    colors: [Color(0xff780206), Color(0xff061161)],
+    colors: [Color(0xff00bf8f), Color(0xff001510)],
     stops: [0, 1],
-    begin: Alignment.centerRight,
-    end: Alignment.centerLeft,
-  );
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  )
+
+  ;
+
   static Gradient gradient2 = const LinearGradient(
-    colors: [Color(0xff780206), Color(0xff061161)],
+    colors: [Color(0xff00bf8f), Color(0xff001510)],
     stops: [0, 1],
-    begin: Alignment.bottomLeft,
-    end: Alignment.topRight,
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
   );
+
 
 }
 
