@@ -13,9 +13,7 @@ class AppColor{
     stops: [0, 1],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
-  )
-
-  ;
+  );
 
   static Gradient gradient2 = const LinearGradient(
     colors: [Color(0xff00bf8f), Color(0xff001510)],
