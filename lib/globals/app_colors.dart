@@ -11,16 +11,18 @@ class AppColor{
   static Gradient gradient1 = const LinearGradient(
     colors: [Color(0xff00bf8f), Color(0xff001510)],
     stops: [0, 1],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  );
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+  )
+  ;
 
   static Gradient gradient2 = const LinearGradient(
     colors: [Color(0xff00bf8f), Color(0xff001510)],
     stops: [0, 1],
     begin: Alignment.centerLeft,
     end: Alignment.centerRight,
-  );
+  )
+  ;
 
 
 }
