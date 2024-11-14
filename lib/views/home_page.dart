@@ -38,33 +38,74 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Helper(
-      mobile: Column(
-        children: [
-          buildHomePersonalInfo(size),
-          const SizedBox(
-            height: 25,
-          ),
-          const ProfileAnimation(),
-        ],
+      mobile: Container(
+        decoration: BoxDecoration(
+          color: Colors.white10,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.white12,
+              blurRadius: 20.0,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(30),
+        child: Column(
+          children: [
+            buildHomePersonalInfo(size),
+            const SizedBox(
+              height: 25,
+            ),
+            const ProfileAnimation(),
+          ],
+        ),
       ),
-      tablet: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Expanded(child: buildHomePersonalInfo(size)),
-          const Expanded(child:  ProfileAnimation()),
-        ],
+      tablet: Container(
+        decoration: BoxDecoration(
+          color: Colors.white10,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.white12,
+              blurRadius: 20.0,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(child: buildHomePersonalInfo(size)),
+            const Expanded(child: ProfileAnimation()),
+          ],
+        ),
       ),
-      desktop: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Expanded(child: buildHomePersonalInfo(size)),
-          SizedBox(width: 255,),
-          const   Expanded(child: ProfileAnimation()),
-        ],
+      desktop: Container(
+        decoration: BoxDecoration(
+          color: Colors.white10,
+          borderRadius: BorderRadius.circular(20),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.white12,
+              blurRadius: 20.0,
+            ),
+          ],
+        ),
+        padding: const EdgeInsets.all(30),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Expanded(child: buildHomePersonalInfo(size)),
+            const SizedBox(
+              width: 255,
+            ),
+            const Expanded(child: ProfileAnimation()),
+          ],
+        ),
       ),
-      paddingWidth: size.width * 0.1,
+      paddingWidth: size.width * 0.2,
       bgGradient: AppColor.gradient1,
     );
   }
@@ -107,7 +148,7 @@ class _HomePageState extends State<HomePage> {
                   TyperAnimatedText(
                     'Flutter Developer',
                     textStyle: AppTextStyles.heroTextStyle().copyWith(
-                      color: Colors.green,
+                      color: AppColor.highlightColor,
                     ),
                   ),
                 ],
@@ -125,7 +166,7 @@ class _HomePageState extends State<HomePage> {
         FadeInDown(
           duration: const Duration(milliseconds: 1600),
           child: Text(
-            'I am a passionate computer science student and Flutter developer with a deep fascination for mobile app technology.',
+            'I am a passionate computer science graduate and Flutter developer with a deep fascination for mobile app technology.',
             style: AppTextStyles.normalStyle(),
           ),
         ),
@@ -189,7 +230,7 @@ class _HomePageState extends State<HomePage> {
       height: 45,
       decoration: BoxDecoration(
         border: Border.all(color: AppColor.themeColor, width: 2.0),
-        color: AppColor.bgColor,
+        color: Colors.black,
         shape: BoxShape.circle,
       ),
       padding: const EdgeInsets.all(6),
@@ -197,7 +238,7 @@ class _HomePageState extends State<HomePage> {
         asset,
         width: 10,
         height: 12,
-        color: hover ? AppColor.aqua : Colors.green,
+        color: hover ? Colors.white : AppColor.highlightColor,
         // fit: BoxFit.fill,
       ),
     );

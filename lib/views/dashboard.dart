@@ -45,8 +45,7 @@ class _DashboardState extends State<Dashboard> {
       index: index,
       duration: Duration(seconds: 2),
       curve: Curves.fastLinearToSlowEaseIn,
-    )
-        .whenComplete(() {
+    ).whenComplete(() {
       setState(() {
         menuIndex = index;
       });
@@ -114,7 +113,7 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Text(
                     'Portfolio',
-                    style: AppTextStyles.headerTextStyle(),
+                    style: AppTextStyles.headerTextStyle().copyWith(fontSize: 24),
                   ),
                   const Spacer(),
                   SizedBox(
@@ -123,7 +122,7 @@ class _DashboardState extends State<Dashboard> {
                       itemCount: menuItems.length,
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      separatorBuilder: (context, child) => SizedBox(width: 8),
+                      separatorBuilder: (context, child) => const SizedBox(width: 8),
                       itemBuilder: (context, index) {
                         return InkWell(
                           onTap: () {
@@ -134,9 +133,10 @@ class _DashboardState extends State<Dashboard> {
                             setState(() {
                               if (value) {
                                 menuIndex = index;
-                              } else {
-                                menuIndex = 0;
                               }
+                              // else {
+                              //   menuIndex = 0;
+                              // }
                             });
                           },
                           child: buildNavBarAnimatedContainer(
@@ -173,7 +173,7 @@ class _DashboardState extends State<Dashboard> {
       child: Text(
         menuItems[index],
         style: AppTextStyles.headerTextStyle()
-            .copyWith(color: hover ? Colors.green : Colors.white),
+            .copyWith(color: hover ? Colors.white : AppColor.highlightColor),
       ),
     );
   }

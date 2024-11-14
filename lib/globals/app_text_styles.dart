@@ -6,7 +6,7 @@ class AppTextStyles{
     return GoogleFonts.signikaNegative(
       fontSize: 18,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: Colors.black,
     );
   }
 
@@ -14,7 +14,7 @@ class AppTextStyles{
     return GoogleFonts.oswald(
       fontSize: 24,
       fontWeight: FontWeight.w800,
-      color: Colors.white,
+      color: Colors.black,
     );
   }
 

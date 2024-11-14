@@ -9,14 +9,14 @@ class AppButtons {
     return MaterialButton(
       onPressed: onTap,
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-      color: Colors.green,
+      color: AppColor.highlightColor,
       shape: OutlineInputBorder(
         borderRadius: BorderRadius.circular(30),
         borderSide: BorderSide.none,
       ),
       height: 46,
       minWidth: 120,
-      hoverColor: AppColor.aqua,
+      hoverColor: Colors.white,
       elevation: 6,
       splashColor: AppColor.lawGreen,
       focusElevation: 12,
