@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
     final Size size = MediaQuery.of(context).size;
     return Helper(
       mobile: Container(
-        width: double.infinity,
+       width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white10,
           borderRadius: BorderRadius.circular(20),
@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 05,vertical: 5),
         child: Column(
           children: [
             const ProfileAnimation(),

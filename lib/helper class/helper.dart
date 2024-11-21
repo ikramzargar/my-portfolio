@@ -22,17 +22,16 @@ class Helper extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth < 768) {
           return Container(
-              child: mobile,
-            //  height: size.height,
-              width: size.width,
+              width: /*size.width*/600,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   gradient: bgGradient,
               ),
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: size.height *0.2,
-                horizontal: paddingWidth,
-              ));
+                horizontal: 10/*paddingWidth*/,
+              ),
+              child: mobile,);
         } else if (constraints.maxWidth < 1200) {
           return Container(
               child: tablet,
@@ -45,7 +44,7 @@ class Helper extends StatelessWidget {
               // color: bgColor,
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: size.height *0.2,
-                horizontal: paddingWidth,
+                horizontal: 30/*paddingWidth*/,
               ));
         } else {
           return Container(
@@ -59,7 +58,7 @@ class Helper extends StatelessWidget {
               // color: bgColor,
               padding: EdgeInsetsDirectional.symmetric(
                 vertical: size.height *0.2,
-                horizontal: paddingWidth,
+                horizontal: 200/*paddingWidth*/,
               ));
         }
       },
