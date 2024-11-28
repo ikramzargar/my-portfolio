@@ -1,4 +1,4 @@
-import 'package:animate_do/animate_do.dart';
+  import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
 import '../globals/app_colors.dart';
@@ -95,47 +95,47 @@ class _MyProjectsState extends State<MyProjects> {
                         image: AssetImage(image), fit: BoxFit.fill),
                   ),
                 ),
-                // Visibility(
-                //   visible: index == hoveredIndex,
-                //   child: AnimatedContainer(
-                //     duration: const Duration(milliseconds: 600),
-                //     transform: index == hoveredIndex ? onH0verEffect : null,
-                //     curve: Curves.easeIn,
-                //     padding: const EdgeInsets.symmetric(
-                //         horizontal: 14, vertical: 16),
-                //     decoration: BoxDecoration(
-                //       borderRadius: BorderRadius.circular(20),
-                //       gradient: LinearGradient(
-                //         colors: [Color(0xffdc2424), Color(0xff4a569d)],
-                //         stops: [0, 1],
-                //         begin: Alignment.topLeft,
-                //         end: Alignment.bottomRight,
-                //       ),
-                //     ),
-                //     child: Column(
-                //       children: [
-                //         Text(
-                //           'app dev',
-                //           style: AppTextStyles.heroTextStyle()
-                //               .copyWith(color: Colors.black87, fontSize: 20),
-                //         ),
-                //         SizedBox(height: 15.0),
-                //         Text(
-                //           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                //           style: AppTextStyles.normalStyle()
-                //               .copyWith(color: Colors.black87),
-                //           textAlign: TextAlign.center,
-                //         ),
-                //         SizedBox(height: 30.0),
-                //         const CircleAvatar(
-                //           maxRadius: 25,
-                //           backgroundColor: Colors.white,
-                //           child: Icon(Icons.open_in_browser_rounded),
-                //         )
-                //       ],
-                //     ),
-                //   ),
-                // ),
+                Visibility(
+                  visible: index == hoveredIndex,
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 600),
+                    transform: index == hoveredIndex ? onH0verEffect : null,
+                    curve: Curves.easeIn,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 14, vertical: 16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        colors: [Color(0xffdc2424), Color(0xff4a569d)],
+                        stops: [0, 1],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          'app dev',
+                          style: AppTextStyles.heroTextStyle()
+                              .copyWith(color: Colors.black87, fontSize: 20),
+                        ),
+                        SizedBox(height: 15.0),
+                        Text(
+                          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
+                          style: AppTextStyles.normalStyle()
+                              .copyWith(color: Colors.black87),
+                          textAlign: TextAlign.center,
+                        ),
+                        SizedBox(height: 30.0),
+                        const CircleAvatar(
+                          maxRadius: 25,
+                          backgroundColor: Colors.white,
+                          child: Icon(Icons.open_in_browser_rounded),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

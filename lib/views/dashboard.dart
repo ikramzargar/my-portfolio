@@ -4,6 +4,7 @@ import 'package:my_portfolio/views/contact.dart';
 import 'package:my_portfolio/views/footer.dart';
 import 'package:my_portfolio/views/home_page.dart';
 import 'package:my_portfolio/views/my_projects.dart';
+import 'package:my_portfolio/views/skills.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
@@ -24,8 +25,8 @@ class _DashboardState extends State<Dashboard> {
   final onMenuHover = Matrix4.identity()..scale(1.0);
   final menuItems = <String>[
     'Home',
-    'About',
-    //'Skills',
+    //'About',
+    'Skills',
     'Projects',
     'Contact',
   ];
@@ -33,7 +34,8 @@ class _DashboardState extends State<Dashboard> {
 
   final screenList = const <Widget>[
     HomePage(),
-    AboutMe(),
+    MySkills(),
+  //  AboutMe(),
     MyProjects(),
     Contact(),
     Footer(),
