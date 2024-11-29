@@ -14,17 +14,17 @@ class MySkills extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> skills = [
-      "Flutter",
-      "Dart",
-      "FireBase",
-      "Android Studio",
-      "Provider",
-      "Web Api",
-      "C",
-      "HTML",
-      "CSS"
-    ];
+    // final List<String> skills = [
+    //   "Flutter",
+    //   "Dart",
+    //   "FireBase",
+    //   "Android Studio",
+    //   "Provider",
+    //   "Web Api",
+    //   "C",
+    //   "HTML",
+    //   "CSS"
+    // ];
     final size = MediaQuery
         .of(context)
         .size;

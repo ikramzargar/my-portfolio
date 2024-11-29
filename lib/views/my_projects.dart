@@ -1,6 +1,7 @@
   import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
+import 'package:my_portfolio/globals/utils.dart';
 import '../globals/app_colors.dart';
 import '../globals/app_text_styles.dart';
 import '../helper class/helper.dart';
@@ -13,7 +14,7 @@ class MyProjects extends StatefulWidget {
 }
 
 class _MyProjectsState extends State<MyProjects> {
-  final onH0verEffect = Matrix4.identity()..scale(1.0);
+  final onH0verEffect = Matrix4.identity()..scale(0.9);
 
   List images = <String>[
     AppAssets.project1,
@@ -50,7 +51,7 @@ class _MyProjectsState extends State<MyProjects> {
         mainAxisSize: MainAxisSize.min,
         children: [
           buildProjectText(),
-          SizedBox(height: 40.0),
+          const SizedBox(height: 40.0),
           buildProjectGridView(crossAxisCount: 3),
         ],
       ),
@@ -60,8 +61,48 @@ class _MyProjectsState extends State<MyProjects> {
   }
 
   GridView buildProjectGridView({required int crossAxisCount}) {
+    List<Map<String, String>> projects = [
+      {
+        'title':'SkillHire',
+        'body':'SkillHire is a Flutter app connecting homeowners with handyman service providers. Users can post jobs, browse providers, '
+            'and specify locations using Google Maps API, '
+            'while providers can manage availability and find jobs. It uses Firebase Authentication and Firestore for secure data handling.',
+        'link':'https://github.com/ikramzargar/SkillHire',
+      },
+      {
+        'title':'Meals',
+        'body':'The Meals App, built entirely in Flutter, allows users to explore categorized recipes, view detailed cooking steps,'
+            ' and favorite meals for easy access. It offers a clean and intuitive interface for seamless meal planning.',
+        'link':'https://github.com/ikramzargar/meals',
+      },
+      {
+        'title':'Habitly',
+        'body':'Habitly is a Flutter app that helps users build better habits by creating tasks, setting reminders, and marking them as done. '
+            'With notifications and an intuitive interface, it simplifies daily habit tracking and progress monitoring.',
+        'link':'https://github.com/ikramzargar/habitly',
+      },
+      {
+        'title':'Tic Tac Toe',
+        'body':'A classic Tic Tac Toe game built in Flutter, offering a simple and intuitive interface for two players to compete. '
+            ' Enjoy seamless gameplay with an elegant design, all implemented in pure Flutter.',
+        'link':'https://github.com/ikramzargar/tic-tac-toe',
+      },
+      {
+        'title':'Expense Tracker',
+        'body':'The Expense Tracker app, built in Flutter, helps users manage their finances by tracking expenses and categorizing them. Fully responsive,'
+            ' it offers a seamless experience across devices, with an intuitive interface for monitoring spending effectively.',
+        'link':'https://github.com/ikramzargar/expense_tracker',
+      },
+      {
+        'title':'BMI Calculator',
+        'body':'The BMI Calculator app, built in Flutter, allows users to easily calculate their Body Mass Index and understand their health status.'
+            ' With a responsive design and user-friendly interface, it offers a seamless experience across all devices.',
+        'link':'https://github.com/ikramzargar/bmi-calculator',
+      },
+
+    ];
     return GridView.builder(
-      itemCount: images.length,
+      itemCount: projects.length,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -71,11 +112,12 @@ class _MyProjectsState extends State<MyProjects> {
         crossAxisSpacing: 24,
       ),
       itemBuilder: (context, index) {
-        var image = images[index];
         return FadeInUpBig(
           duration: const Duration(milliseconds: 1600),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Utils().launch(projects[index]['link']!);
+            },
             onHover: (value) {
               setState(() {
                 if (value) {
@@ -91,49 +133,48 @@ class _MyProjectsState extends State<MyProjects> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        image: AssetImage(image), fit: BoxFit.fill),
                   ),
                 ),
-                Visibility(
-                  visible: index == hoveredIndex,
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 600),
-                    transform: index == hoveredIndex ? onH0verEffect : null,
-                    curve: Curves.easeIn,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 14, vertical: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      gradient: LinearGradient(
-                        colors: [Color(0xffdc2424), Color(0xff4a569d)],
-                        stops: [0, 1],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 600),
+                  transform: index == hoveredIndex ? onH0verEffect : null,
+                  curve: Curves.easeIn,
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 14, vertical: 16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey,
+                    boxShadow:[BoxShadow(color: AppColor.highlightColor,blurRadius: 10)] ,
+
+                  ),
+                  child: Column(
+                    children: [
+                      Text(
+                      projects[index]['title']!,
+                        style: AppTextStyles.heroTextStyle()
+                            .copyWith(color: Colors.black87, fontSize: 20),
                       ),
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          'app dev',
-                          style: AppTextStyles.heroTextStyle()
-                              .copyWith(color: Colors.black87, fontSize: 20),
-                        ),
-                        SizedBox(height: 15.0),
-                        Text(
-                          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.',
-                          style: AppTextStyles.normalStyle()
-                              .copyWith(color: Colors.black87),
-                          textAlign: TextAlign.center,
-                        ),
-                        SizedBox(height: 30.0),
-                        const CircleAvatar(
-                          maxRadius: 25,
-                          backgroundColor: Colors.white,
-                          child: Icon(Icons.open_in_browser_rounded),
-                        )
-                      ],
-                    ),
+                      SizedBox(height: 15.0),
+                      Text(
+                        projects[index]['body']!,
+                        style: AppTextStyles.normalStyle()
+                            .copyWith(color: Colors.black87),
+                        textAlign: TextAlign.center,
+                        maxLines: 7,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      SizedBox(height: 30.0),
+                      // InkWell(
+                      //   onTap: (){
+                      //     Utils().launch(projects[index]['link']!);
+                      //   },
+                      //   child: const CircleAvatar(
+                      //     maxRadius: 25,
+                      //     backgroundColor: Colors.white,
+                      //     child: Icon(Icons.open_in_browser_rounded),
+                      //   ),
+                      // )
+                    ],
                   ),
                 ),
               ],
