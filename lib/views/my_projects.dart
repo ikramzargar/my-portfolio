@@ -56,7 +56,7 @@ class _MyProjectsState extends State<MyProjects> {
         ],
       ),
       paddingWidth: size.width * 0.1,
-      bgGradient: AppColor.gradient1,
+     // bgGradient: AppColor.gradient1,
     );
   }
 

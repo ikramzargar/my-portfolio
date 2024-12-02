@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:my_portfolio/views/dashboard.dart';
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const Dashboard(),
-    );
+    ).animate().fadeIn();
   }
 }
 

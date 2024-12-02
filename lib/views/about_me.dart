@@ -50,7 +50,6 @@ class _AboutMeState extends State<AboutMe> {
         ),
         paddingWidth: size.width * 0.1,
 
-      bgGradient: AppColor.gradient2,
       );
 
   }

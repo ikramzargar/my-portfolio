@@ -61,15 +61,15 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: AppColor.gradient1,
-          ),
-        ),
+        // flexibleSpace: Container(
+        //   decoration: BoxDecoration(
+        //     gradient: AppColor.gradient1,
+        //   ),
+        // ),
         toolbarHeight: 70,
-        backgroundColor: Colors.transparent,
+        backgroundColor:AppColor.bgColor,
         titleSpacing: 40,
-        elevation: 2,
+        elevation: 3,
         title: LayoutBuilder(
           builder: (context, constraints) {
             if (constraints.maxWidth < 768) {
@@ -77,8 +77,8 @@ class _DashboardState extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    'Portfolio',
-                    style: AppTextStyles.headerTextStyle(),
+                    'Ikram Zargar',
+                    style: AppTextStyles.headerTextStyle().copyWith(color: Colors.white),
                   ),
                   const Spacer(),
                   PopupMenuButton(
@@ -114,8 +114,8 @@ class _DashboardState extends State<Dashboard> {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    'Portfolio',
-                    style: AppTextStyles.headerTextStyle().copyWith(fontSize: 24),
+                    'Ikram zargar',
+                    style: AppTextStyles.headerTextStyle().copyWith(fontSize: 24,color: Colors.white),
                   ),
                   const Spacer(),
                   SizedBox(

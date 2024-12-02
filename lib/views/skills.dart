@@ -89,7 +89,6 @@ class MySkills extends StatelessWidget {
         ],
       ),
       paddingWidth: 20,
-      bgGradient: AppColor.gradient1,
     );
   }
 
