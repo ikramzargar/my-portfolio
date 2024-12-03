@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/globals/app_assets.dart';
 import 'package:my_portfolio/globals/app_buttons.dart';
 import 'package:my_portfolio/globals/app_colors.dart';
@@ -239,7 +240,7 @@ class _HomePageState extends State<HomePage> {
         asset,
         width: 10,
         height: 12,
-        color: hover ? Colors.white : AppColor.highlightColor,
+       // color: hover ? Colors.white : AppColor.highlightColor,
         // fit: BoxFit.fill,
       ),
     );
