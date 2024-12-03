@@ -83362,7 +83362,7 @@ return A.fa(B.U,s.e,B.t,o,o,new A.ct(B.f1,o,o,o,o,o,B.aj),o,o,o,new A.cD(200,n,2
 $S:493}
 A.K8.prototype={
 I(a){var s=null,r=A.tW(s,A.at6(B.a8,s,s,B.Ie),!0)
-r=new A.qi(new A.yv(B.Co,"My Portfolio",r,!1,s),s,s,s,!0,B.p,s,s,s,s,B.p,B.p,s)
+r=new A.qi(new A.yv(B.Co,"Ikram Zargar",r,!1,s),s,s,s,!0,B.p,s,s,s,s,B.p,B.p,s)
 A.azB(!0,"Animate.onPlay is not called when Animate.autoPlay=false")
 A.azB(!0,"Animate.onInit is not called when used with Animate.controller")
 r.as=A.b([],t.WG)
