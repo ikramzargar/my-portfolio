@@ -217,7 +217,9 @@ class _HomePageState extends State<HomePage> {
         FadeInUp(
           duration: const Duration(milliseconds: 1800),
           child: AppButtons.buildMaterialButton(
-              onTap: () {}, buttonText: 'Download Cv'),
+              onTap: () {
+                Utils().launch('https://docs.google.com/document/d/1_IkYOUo-dK5TLZT34RmdvuGerJijokRnVLdwLDkiieI/edit?usp=sharing');
+              }, buttonText: 'Download Cv'),
         ),
         const SizedBox(
           height: 18,
@@ -236,7 +238,7 @@ class _HomePageState extends State<HomePage> {
         shape: BoxShape.circle,
       ),
       padding: const EdgeInsets.all(6),
-      child: Image.asset(
+      child: SvgPicture.asset(
         asset,
         width: 10,
         height: 12,
